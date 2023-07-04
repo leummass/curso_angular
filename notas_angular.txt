@@ -1,0 +1,8 @@
+ng new <nombre> -- para crear nuevo proyecto de angular
+
+ng serve -o -- para correr servidor
+
+"CTRL + C" -- para terminar o detener el servidor
+
+**COMPONENTES DE ANGULAR**
+están definidos en app.component.ts, ahí se asigna el selector que es el nombre con el que se llama en el archivo .html principal, templateUrl que es donde se estructura el componente en html y styleUrls que es de donde se sacan los estilos 

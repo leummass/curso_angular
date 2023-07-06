@@ -6,3 +6,8 @@ ng serve -o -- para correr servidor
 
 **COMPONENTES DE ANGULAR**
 están definidos en app.component.ts, ahí se asigna el selector que es el nombre con el que se llama en el archivo .html principal, templateUrl que es donde se estructura el componente en html y styleUrls que es de donde se sacan los estilos 
+
+podemos crear atributos en app.component.ts que posteriormente se utilicen en el app.component.html, como el titulo que se declara title = 'text'; y luego se utiliza en app.component.html como {{title}} y lo sustituye en la página por el valor asignado
+
+**RECREACIÓN DE NODE_MODULES**
+se escribe 'npm install' en la carpeta del proyecto

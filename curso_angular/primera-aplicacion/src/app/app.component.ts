@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Aplicación para registro de nuevos usuarios';
+  title2 = 'Ingresar su usuario y contraseña de administrador';
 }

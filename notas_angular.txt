@@ -9,5 +9,20 @@ están definidos en app.component.ts, ahí se asigna el selector que es el nombr
 
 podemos crear atributos en app.component.ts que posteriormente se utilicen en el app.component.html, como el titulo que se declara title = 'text'; y luego se utiliza en app.component.html como {{title}} y lo sustituye en la página por el valor asignado
 
+cuando creemos un componente, es necesario listarlo en el archivo app.module.ts, primero importandolo arriba, luego en declarations poner el mismo nombre.
+
+*RECOMENDACIONES AL CREAR COMPONENTES*
+es recomendable crear componentes con todos sus archivos en una sola carpeta y seguir la nomenclatura que tienen, poner <nombre>.component.ts y las otras extensiones también como html, .spec.ts y .css 
+
+
+
 **RECREACIÓN DE NODE_MODULES**
 se escribe 'npm install' en la carpeta del proyecto
+
+
+AppModule es un archivo de ts que es con el que inicia la aplicación, en este se encuentran cosas como los decoradores los cuales se usan para agregar características adicionales a la definición de AppModule, ejemplos de estas características son las declaraciones, imports, providers y bootstrap entre más.
+
+En el caso para levantar la aplicación se utiliza bootstrap el cual usa a AppComponent, el mismo que se encuentra en la carpeta app, al tratar de direccionarnos a este nos mandará al archivo app.component.ts
+
+**DECORADORES**
+los decoradores están en los archivos ts, estos siempre tienen un '@' antes de su respectivo nombre

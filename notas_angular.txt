@@ -25,4 +25,13 @@ AppModule es un archivo de ts que es con el que inicia la aplicación, en este s
 En el caso para levantar la aplicación se utiliza bootstrap el cual usa a AppComponent, el mismo que se encuentra en la carpeta app, al tratar de direccionarnos a este nos mandará al archivo app.component.ts
 
 **DECORADORES**
+
 los decoradores están en los archivos ts, estos siempre tienen un '@' antes de su respectivo nombre
+
+**INSTALACIÓN DE BOOTSTRAP EN EL PROYECTO**
+
+para instalar bootstrap en el proyecto, abrimos una terminal en el directorio y escribimos npm i bootstrap --save 
+luego iremos al archivo angular.json y en el apartado de styles escribimos la ruta, en este caso es "node_modules/bootstrap/dist/css/bootstrap.min.css"
+en el apartado de scripts añadimos lo siguiente:"node_modules/jquery/dist/jquery.slim.min.js",
+                                                "node_modules/@popperjs/dist/umd/popper.min.js",
+                                                "node_modules/bootstrap/dist/js/bootstrap.min.js"

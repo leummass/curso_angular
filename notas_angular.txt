@@ -35,3 +35,6 @@ luego iremos al archivo angular.json y en el apartado de styles escribimos la ru
 en el apartado de scripts añadimos lo siguiente:"node_modules/jquery/dist/jquery.slim.min.js",
                                                 "node_modules/@popperjs/dist/umd/popper.min.js",
                                                 "node_modules/bootstrap/dist/js/bootstrap.min.js"
+
+**TEMPLATE REFERENCE VARIABLE**
+se puede utilizar interpolación también para guardar valores, en el ejemplo se muestra que en un input que tiene el nombre 'input' se utiliza interpolación para guardar lo que se escriba, el nombre de la variable es el mismo que lo escrito dentro como nombre del input

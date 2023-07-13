@@ -1,1 +1,11 @@
-<p>usuario works!</p>
+<p>
+    Apellido: {{apellido}} 
+    Nombre: {{nombre}} 
+    Edad: {{getEdad()}}
+</p>
+
+<div (keyup)="0">
+    <input #input /> 
+    {{ input.value }}
+
+</div>

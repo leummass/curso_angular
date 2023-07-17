@@ -38,3 +38,8 @@ en el apartado de scripts añadimos lo siguiente:"node_modules/jquery/dist/jquer
 
 **TEMPLATE REFERENCE VARIABLE**
 se puede utilizar interpolación también para guardar valores, en el ejemplo se muestra que en un input que tiene el nombre 'input' se utiliza interpolación para guardar lo que se escriba, el nombre de la variable es el mismo que lo escrito dentro como nombre del input
+
+**PROPERTY BINDING** 
+al momento de agregar una propiedad a un objeto de html entre corchetes, se le da a entender a angular que nosotros le asignaremos un valor de alguna forma, en este caso, se utiliza la variable en nuestro archivo ts para darle el valor.
+
+

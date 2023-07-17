@@ -6,4 +6,7 @@ import { Component } from "@angular/core";
     styleUrls: ['./usuarios.component.css'],
 })
 
-export class UsuariosComponent{}
+export class UsuariosComponent{
+    disableBtn = true;
+
+}

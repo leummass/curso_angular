@@ -42,4 +42,12 @@ se puede utilizar interpolación también para guardar valores, en el ejemplo se
 **PROPERTY BINDING** 
 al momento de agregar una propiedad a un objeto de html entre corchetes, se le da a entender a angular que nosotros le asignaremos un valor de alguna forma, en este caso, se utiliza la variable en nuestro archivo ts para darle el valor.
 
+**EVENT BINDING**
+al momento de agregar un evento a un elemento de html, se tiene que hacer entre paréntesis para que siga la sintáxis de Angular, a los eventos se les tiene que asignar un método después para que sea lo que se realice al ejecutarlo, el método se define en el archivo typescript del componente
 
+para capturar datos de un input utilizando event binding, es necesario poner entre paréntesis el tipo de evento que será y el método que se ejecutará al momento de realizarlo y se pasa la variable como argumento en la que se guardará el valor, el método modificarTitulo recibe un elemento de tipo event, por medio de este podemos acceder al valor que se escribió en el componente que tiene el evento de input, en nuestro caso es event.target pero es necesario realizar un casteo a HTMLInputElement
+
+
+**TWO-WAY BINDING**
+two-way binding es una forma de comunicar los componentes para enviar información a la clase de angular a la plantilla html del componente.
+para esto es necesario utilizar el [(ngModel)] en los componentes de html y funcionará de la misma manera que si es un evento de input y se guardará en lo que esté después del '='

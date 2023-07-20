@@ -8,5 +8,13 @@ import { Component } from "@angular/core";
 
 export class UsuariosComponent{
     disableBtn = true;
+    msj = 'No se ha agregado ningun usuario';
+    titulo='dsfsdf';
+    agregarUsuario(){
+        this.msj = 'Usuario añadido';
+    }
 
+    modificarTitulo(event: Event){
+        this.titulo = (<HTMLInputElement>event.target).value;
+    }
 }

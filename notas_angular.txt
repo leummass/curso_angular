@@ -51,3 +51,9 @@ para capturar datos de un input utilizando event binding, es necesario poner ent
 **TWO-WAY BINDING**
 two-way binding es una forma de comunicar los componentes para enviar información a la clase de angular a la plantilla html del componente.
 para esto es necesario utilizar el [(ngModel)] en los componentes de html y funcionará de la misma manera que si es un evento de input y se guardará en lo que esté después del '='
+
+**ngIf Y elseBlock**
+en angular se pueden mostrar componentes si se cumplen condiciones especificadas que siempre sean de valor booleano.
+
+**ngFor**
+nos permite mostrar arreglos de objetos o cualquier cosa que pueda ser iterada

@@ -3,15 +3,22 @@
     <div class="col">
       <h1>Listado de usuarios nuevos</h1>
       <app-usuario></app-usuario>
-      <button class='btn btn-primary' 
-      [disabled]="!disableBtn"
-      (click)="agregarUsuario()"> Añadir usuario</button>
-      <p> {{msj}}</p>
+      <button
+        class="btn btn-primary"
+        [disabled]="!disableBtn"
+        (click)="agregarUsuario()"
+      >
+        Añadir usuario
+      </button>
 
-      <label> Título Usuario</label>
-      <input type="text" class="form-control" 
-      [(ngModel)]="titulo">
-      {{titulo}}
+      <p *ngIf="mostrar; else noUsuario">{{ msj }} del tipo {{titulo}}</p>
+      <ng-template #noUsuario>
+        <p > No se pudo agregar usuario</p>
+      </ng-template>
+      <p>
+        <label> Tipo de usuario</label>
+        <input type="text" class="form-control" [(ngModel)]="titulo" />
+      </p>
     </div>
   </div>
 </div>

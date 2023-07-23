@@ -8,9 +8,11 @@ import { Component } from "@angular/core";
 
 export class UsuariosComponent{
     disableBtn = true;
-    msj = 'No se ha agregado ningun usuario';
+    msj = '';
     titulo='dsfsdf';
+    mostrar=false;
     agregarUsuario(){
+        this.mostrar=true;
         this.msj = 'Usuario añadido';
     }
 

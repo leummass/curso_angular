@@ -1,0 +1,59 @@
+ng new <nombre> -- para crear nuevo proyecto de angular
+
+ng serve -o -- para correr servidor
+
+"CTRL + C" -- para terminar o detener el servidor
+
+**COMPONENTES DE ANGULAR**
+están definidos en app.component.ts, ahí se asigna el selector que es el nombre con el que se llama en el archivo .html principal, templateUrl que es donde se estructura el componente en html y styleUrls que es de donde se sacan los estilos 
+
+podemos crear atributos en app.component.ts que posteriormente se utilicen en el app.component.html, como el titulo que se declara title = 'text'; y luego se utiliza en app.component.html como {{title}} y lo sustituye en la página por el valor asignado
+
+cuando creemos un componente, es necesario listarlo en el archivo app.module.ts, primero importandolo arriba, luego en declarations poner el mismo nombre.
+
+*RECOMENDACIONES AL CREAR COMPONENTES*
+es recomendable crear componentes con todos sus archivos en una sola carpeta y seguir la nomenclatura que tienen, poner <nombre>.component.ts y las otras extensiones también como html, .spec.ts y .css 
+
+
+
+**RECREACIÓN DE NODE_MODULES**
+se escribe 'npm install' en la carpeta del proyecto
+
+
+AppModule es un archivo de ts que es con el que inicia la aplicación, en este se encuentran cosas como los decoradores los cuales se usan para agregar características adicionales a la definición de AppModule, ejemplos de estas características son las declaraciones, imports, providers y bootstrap entre más.
+
+En el caso para levantar la aplicación se utiliza bootstrap el cual usa a AppComponent, el mismo que se encuentra en la carpeta app, al tratar de direccionarnos a este nos mandará al archivo app.component.ts
+
+**DECORADORES**
+
+los decoradores están en los archivos ts, estos siempre tienen un '@' antes de su respectivo nombre
+
+**INSTALACIÓN DE BOOTSTRAP EN EL PROYECTO**
+
+para instalar bootstrap en el proyecto, abrimos una terminal en el directorio y escribimos npm i bootstrap --save 
+luego iremos al archivo angular.json y en el apartado de styles escribimos la ruta, en este caso es "node_modules/bootstrap/dist/css/bootstrap.min.css"
+en el apartado de scripts añadimos lo siguiente:"node_modules/jquery/dist/jquery.slim.min.js",
+                                                "node_modules/@popperjs/dist/umd/popper.min.js",
+                                                "node_modules/bootstrap/dist/js/bootstrap.min.js"
+
+**TEMPLATE REFERENCE VARIABLE**
+se puede utilizar interpolación también para guardar valores, en el ejemplo se muestra que en un input que tiene el nombre 'input' se utiliza interpolación para guardar lo que se escriba, el nombre de la variable es el mismo que lo escrito dentro como nombre del input
+
+**PROPERTY BINDING** 
+al momento de agregar una propiedad a un objeto de html entre corchetes, se le da a entender a angular que nosotros le asignaremos un valor de alguna forma, en este caso, se utiliza la variable en nuestro archivo ts para darle el valor.
+
+**EVENT BINDING**
+al momento de agregar un evento a un elemento de html, se tiene que hacer entre paréntesis para que siga la sintáxis de Angular, a los eventos se les tiene que asignar un método después para que sea lo que se realice al ejecutarlo, el método se define en el archivo typescript del componente
+
+para capturar datos de un input utilizando event binding, es necesario poner entre paréntesis el tipo de evento que será y el método que se ejecutará al momento de realizarlo y se pasa la variable como argumento en la que se guardará el valor, el método modificarTitulo recibe un elemento de tipo event, por medio de este podemos acceder al valor que se escribió en el componente que tiene el evento de input, en nuestro caso es event.target pero es necesario realizar un casteo a HTMLInputElement
+
+
+**TWO-WAY BINDING**
+two-way binding es una forma de comunicar los componentes para enviar información a la clase de angular a la plantilla html del componente.
+para esto es necesario utilizar el [(ngModel)] en los componentes de html y funcionará de la misma manera que si es un evento de input y se guardará en lo que esté después del '='
+
+**ngIf Y elseBlock**
+en angular se pueden mostrar componentes si se cumplen condiciones especificadas que siempre sean de valor booleano. Se utiliza *ngIf dentro del elemento html y posteriormente dentro de comillas algo que retorne un valor booleano
+
+**ngFor**
+nos permite mostrar arreglos de objetos o cualquier cosa que pueda ser iterada para esto utilizamos *ngFor="", dentro de las comillas va un let que nos permite iterar dentro de la colección y se puede utilizar interpolación para ir mostrando cada objeto

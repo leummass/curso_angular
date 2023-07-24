@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="col">
+        <h3>{{titulo}}</h3>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div *ngFor="let usuario of usuarios; let i = index">
+                {{i+1}}: {{usuario.nombre}} {{usuario.apellido}}
+            </div>
+        </div>
+    </div>
+</div>

@@ -2,6 +2,23 @@
     <div class="col">
         <h3>{{titulo}}</h3>
     </div>
+    <hr/>
+    <form class="row">
+        <div class="col-md-2">
+            <label for="nombre" class="sr-only">Nombre</label>
+            <input type="text" name="nombre" id="nombre" placheholder="Nombre" class="form-control"[(ngModel)]="nombreInput">
+        </div>
+        <div class="col-md-2 ">
+            <label for="apellido" class="sr-only">Apellido</label>
+            <input type="text" name="apellido" id="apellido" placheholder="Apellido" class="form-control"[(ngModel)]="apellidoInput">
+        </div>
+        <div class="col">
+            <button type="submit" class="btn btn-primary" (click)="agregarUsuario()">Agregar</button>
+        </div>
+        <div class="col">
+            <button type="submit" class="btn btn-primary" (click)="eliminarUsuario()">Eliminar</button>
+        </div>
+    </form>
 </div>
 
 <div class="container">

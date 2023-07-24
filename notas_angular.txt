@@ -57,3 +57,11 @@ en angular se pueden mostrar componentes si se cumplen condiciones especificadas
 
 **ngFor**
 nos permite mostrar arreglos de objetos o cualquier cosa que pueda ser iterada para esto utilizamos *ngFor="", dentro de las comillas va un let que nos permite iterar dentro de la colección y se puede utilizar interpolación para ir mostrando cada objeto
+
+
+
+**BOOTSTRAP**
+para generar forms de una columna podemos crear un div con la clase form-row 
+para generar un form group de solo dos columnas añadimos las clases form-group y col-md-2 a un contenedor
+FORM-GROUP Y FORM-ROW YA NO SIRVEN, UTILIZAR ROW
+sr-only ya no sirve, utilizar visually-hidden

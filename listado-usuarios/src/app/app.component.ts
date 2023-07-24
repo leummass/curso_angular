@@ -13,4 +13,14 @@ export class AppComponent {
     new Usuario('Laura', 'Rojo'),
     new Usuario('Pedro','Picapiedra')
   ];
+  nombreInput:string='';
+  apellidoInput:string='';
+  agregarUsuario(){
+    let usuarion = new Usuario(this.nombreInput,this.apellidoInput);
+    this.usuarios.push(usuarion);
+  }
+  eliminarUsuario(){
+    this.usuarios.pop();
+  }
+
 }

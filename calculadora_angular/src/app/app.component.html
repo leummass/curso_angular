@@ -1,1 +1,5 @@
-<app-app-calculadora></app-app-calculadora>
+<div class="container">
+    <h1>{{titulo}}</h1>
+    <app-formulario (resultadoEvent)="resultadoVal($event)"></app-formulario>
+    <app-resultado [resultadoHijo]="resultadoPadre"></app-resultado>
+</div>

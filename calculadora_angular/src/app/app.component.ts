@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'calculadora';
+  titulo='Aplicación de Calculadora';
+  resultadoPadre: Number = 0;
+  resultadoVal(resultadonum:Number){
+    console.log('oppppp');
+    this.resultadoPadre = resultadonum;
+  }
 }

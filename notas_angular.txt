@@ -58,7 +58,14 @@ en angular se pueden mostrar componentes si se cumplen condiciones especificadas
 **ngFor**
 nos permite mostrar arreglos de objetos o cualquier cosa que pueda ser iterada para esto utilizamos *ngFor="", dentro de las comillas va un let que nos permite iterar dentro de la colección y se puede utilizar interpolación para ir mostrando cada objeto
 
+**@Input()**
+Este decorador nos permite recibir información del componente padre, este se pone en variables dentro del component.ts del componente hijo, un ejemplo sería @Input() usuario: Usuario; que recibe una variable de tipo Usuario y la llama usuario, este valor es asignado al llamar al componente hijo desde el padre, por ejemplo, si se tiene un *ngFor y se manda un arreglo de Usuarios, cada uno de estos tomará lugar en usuario del componente hijo
 
+**@Output()**
+Este decorador se usa para enviar datos de un componente hijo al componente padre, es necesario crear una variable new EventEmitter<tipodato>() para poder enviar los datos
+para enviar los datos es necesario usar .emit(variableamandar) 
+
+"strictPropertyInitialization": false en tsconfig.json para que la inicialización de las variables no sea obligatoria
 
 **BOOTSTRAP**
 para generar forms de una columna podemos crear un div con la clase form-row 

@@ -7,9 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   titulo='Aplicación de Calculadora';
-  resultadoPadre: Number = 0;
-  resultadoVal(resultadonum:Number){
-    console.log('oppppp');
+  resultadoPadre: number = 0;
+
+  resultadoV(resultadonum:number){
     this.resultadoPadre = resultadonum;
   }
 }

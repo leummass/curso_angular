@@ -17,6 +17,6 @@ import { FormularioComponent } from './formulario/formulario.component';
     FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent, ResultadoComponent, FormularioComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

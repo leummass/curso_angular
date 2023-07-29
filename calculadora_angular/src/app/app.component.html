@@ -1,5 +1,5 @@
-<div class="container">
+
     <h1>{{titulo}}</h1>
-    <app-formulario (resultadoEvent)="resultadoVal($event)"></app-formulario>
+    <app-formulario (resultadoEvent) = "resultadoV($event)" ></app-formulario>
+    {{resultadoPadre}}
     <app-resultado [resultadoHijo]="resultadoPadre"></app-resultado>
-</div>

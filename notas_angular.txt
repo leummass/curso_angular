@@ -14,11 +14,8 @@ cuando creemos un componente, es necesario listarlo en el archivo app.module.ts,
 *RECOMENDACIONES AL CREAR COMPONENTES*
 es recomendable crear componentes con todos sus archivos en una sola carpeta y seguir la nomenclatura que tienen, poner <nombre>.component.ts y las otras extensiones también como html, .spec.ts y .css 
 
-
-
 **RECREACIÓN DE NODE_MODULES**
 se escribe 'npm install' en la carpeta del proyecto
-
 
 AppModule es un archivo de ts que es con el que inicia la aplicación, en este se encuentran cosas como los decoradores los cuales se usan para agregar características adicionales a la definición de AppModule, ejemplos de estas características son las declaraciones, imports, providers y bootstrap entre más.
 
@@ -66,6 +63,12 @@ Este decorador se usa para enviar datos de un componente hijo al componente padr
 para enviar los datos es necesario usar .emit(variableamandar) 
 
 "strictPropertyInitialization": false en tsconfig.json para que la inicialización de las variables no sea obligatoria
+
+**Referencias locales**
+Las referencias locales se utilizan de la siguiente forma:
+1. Se le da un nombre a los input con #, por ejemplo, #nombreInput
+2. En el elemento que vaya a mandar la información, en el evento click que llama a la función, se agregarán los nombres como parámetrofa
+3. En el archivo typescript, los parámetros se reciben como tipo HTMLInpuitElement y se utiliza la propiedad .value de los elementos recibidos
 
 **BOOTSTRAP**
 para generar forms de una columna podemos crear un div con la clase form-row 

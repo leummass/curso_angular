@@ -10,10 +10,9 @@ export class FormularioComponent {
 
   @Output() usuarioCreado = new EventEmitter<Usuario>();
 
-  nombreInput:string="sdf";
-  apellidoInput:string="fsd";
-  agregarUsuario(){
-    let usuarion = new Usuario(this.nombreInput,this.apellidoInput);
+  
+  agregarUsuario(nombreInput: HTMLInputElement, apellidoInput:HTMLInputElement){
+    let usuarion = new Usuario(nombreInput.value, apellidoInput.value);
     this.usuarioCreado.emit(usuarion);
     
   }

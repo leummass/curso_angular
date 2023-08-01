@@ -1,5 +1,3 @@
-
-    <h1>{{titulo}}</h1>
-    <app-formulario (resultadoEvent) = "resultadoV($event)" ></app-formulario>
-    {{resultadoPadre}}
-    <app-resultado [resultadoHijo]="resultadoPadre"></app-resultado>
+<h1>{{ titulo }}</h1>
+<app-formulario (resultadoEvent)="resultadoV($event)"></app-formulario>
+<app-resultado [resultadoHijo]="resultadoPadre"></app-resultado>

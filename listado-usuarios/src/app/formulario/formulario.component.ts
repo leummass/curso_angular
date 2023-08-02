@@ -1,22 +1,30 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  EventEmitter,
+  Output,
+  ViewChild,
+} from '@angular/core';
 import { Usuario } from '../usuario.model';
 
 @Component({
   selector: 'app-formulario',
   templateUrl: './formulario.component.html',
-  styleUrls: ['./formulario.component.css']
+  styleUrls: ['./formulario.component.css'],
 })
 export class FormularioComponent {
-
   @Output() usuarioCreado = new EventEmitter<Usuario>();
+  @ViewChild('nombreInput') nombreInput: ElementRef;
+  @ViewChild('apellidoInput') apellidoInput: ElementRef;
 
-  
-  agregarUsuario(nombreInput: HTMLInputElement, apellidoInput:HTMLInputElement){
-    let usuarion = new Usuario(nombreInput.value, apellidoInput.value);
+  agregarUsuario() {
+    let usuarion = new Usuario(
+      this.nombreInput.nativeElement.value,
+      this.apellidoInput.nativeElement.value
+    );
     this.usuarioCreado.emit(usuarion);
-    
   }
-  eliminarUsuario(){
+  eliminarUsuario() {
     //this.usuarios.pop();
   }
 }

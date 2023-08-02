@@ -70,6 +70,10 @@ Las referencias locales se utilizan de la siguiente forma:
 2. En el elemento que vaya a mandar la información, en el evento click que llama a la función, se agregarán los nombres como parámetrofa
 3. En el archivo typescript, los parámetros se reciben como tipo HTMLInpuitElement y se utiliza la propiedad .value de los elementos recibidos
 
+**@ViewChild**
+Lo que nos permite el decorador ViewChild es obtener datos del documento HTML en base a el nombre que tenga asignado, por ejemplo si tenemos un elemento con el nombre #numeroInput, tenemos que declarar @ViewChild('numeroInput') <nombredevariable>: ElementRef; y se estaría recibiendo el valor ahí.
+Para obtener el valor de un elemento de este tipo se utilizará .nativeElement.value
+
 **BOOTSTRAP**
 para generar forms de una columna podemos crear un div con la clase form-row 
 para generar un form group de solo dos columnas añadimos las clases form-group y col-md-2 a un contenedor

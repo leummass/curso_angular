@@ -7,7 +7,6 @@ import { Usuario } from '../usuario.model';
   styleUrls: ['./persona.component.css']
 })
 export class PersonaComponent {
-  
   @Input() usuario: Usuario;
   @Input() indice:number;
 }

@@ -1,21 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Usuario } from './usuario.model';
+import { LoggingService } from './LoggingService.service';
+import { UsuariosService } from './usuarios.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   titulo = 'Listado de usuarios';
-  usuarios: Usuario[] = [
-    new Usuario('Juan', 'Pérez'),
-    new Usuario('Laura', 'Rojo'),
-    new Usuario('Pedro','Picapiedra')
-  ];
+  usuarios: Usuario[] = [];
+  constructor(private loggingService: LoggingService, private usuariosService:UsuariosService){}
   
-  usuarioAgregado(usuario: Usuario){
-    this.usuarios.push(usuario);
+  ngOnInit(): void {
+    this.usuarios= this.usuariosService.usuarios;
   }
+
+  /*usuarioAgregado(usuario: Usuario){
+    //this.loggingService.enviarMensajeAConsola("Usuario agregado: "+usuario.nombre);
+    //this.usuarios.push(usuario);
+    this.usuariosService.usuarioAgregado(usuario);
+  }*/
 
 }

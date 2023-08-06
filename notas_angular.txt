@@ -74,6 +74,11 @@ Las referencias locales se utilizan de la siguiente forma:
 Lo que nos permite el decorador ViewChild es obtener datos del documento HTML en base a el nombre que tenga asignado, por ejemplo si tenemos un elemento con el nombre #numeroInput, tenemos que declarar @ViewChild('numeroInput') <nombredevariable>: ElementRef; y se estaría recibiendo el valor ahí.
 Para obtener el valor de un elemento de este tipo se utilizará .nativeElement.value
 
+**Service**
+Un servicio está definido por una clase de typescript pero esta es utilizada por varios componentes y nos ayuda a compartir información, basicamente son métodos, lo común de un servicio es que provea información que viene de una fuente de datos ya sea dinámica o estática
+Los servicios se inyectan a través del constructor de los otros componentes que lo utilicen en su respectivo archivo .component.ts, también, en  @Component es necesario agregarlos como providers.
+Si queremos que el servicio pueda ser utilizado en todos los componentes, lo podemos importar en el archivo app.module.ts
+
 **BOOTSTRAP**
 para generar forms de una columna podemos crear un div con la clase form-row 
 para generar un form group de solo dos columnas añadimos las clases form-group y col-md-2 a un contenedor

@@ -74,10 +74,16 @@ Las referencias locales se utilizan de la siguiente forma:
 Lo que nos permite el decorador ViewChild es obtener datos del documento HTML en base a el nombre que tenga asignado, por ejemplo si tenemos un elemento con el nombre #numeroInput, tenemos que declarar @ViewChild('numeroInput') <nombredevariable>: ElementRef; y se estaría recibiendo el valor ahí.
 Para obtener el valor de un elemento de este tipo se utilizará .nativeElement.value
 
-**Service**
+**Service // Servicio**
 Un servicio está definido por una clase de typescript pero esta es utilizada por varios componentes y nos ayuda a compartir información, basicamente son métodos, lo común de un servicio es que provea información que viene de una fuente de datos ya sea dinámica o estática
 Los servicios se inyectan a través del constructor de los otros componentes que lo utilicen en su respectivo archivo .component.ts, también, en  @Component es necesario agregarlos como providers.
-Si queremos que el servicio pueda ser utilizado en todos los componentes, lo podemos importar en el archivo app.module.ts
+Si queremos que el servicio pueda ser utilizado en todos los componentes, lo podemos importar en el archivo app.module.ts.
+
+**Inyección de un servicio en otro servicio**
+Para poder inyectar un servicio en otro servicio es necesario poner el decorador @Injectable antes de la declaración de la clase en la que se usará o inyectará el otro servicio.
+
+**Comunicar componentes por medio de un servicio**
+Para lograr esto es necesario utilizar un EventEmitter en el servicio que nos ayudará a compartir la información, se crea un EventEmitter del tipo que sea, luego, en el componente que emitirá la información es necesario utilizar un método o algo que dispare esto, por ejemplo, en un botón se usa el método emitirSaludo que le dirá al EventEmitter de nuestro servicio qué emitir, en nuestro caso, un valor númerico que es el índice de registro, luego, en el otro componente dentro de su constructor suscribimos al componente al EventEmitter, ejemplo: this.usuariosSerive.saludar.subscribe() y dentro de paréntesis va la acción que queremos que se realice al momento de que se emita el evento, en nuestro caso es una función de flecha que alerta el número del índice.
 
 **BOOTSTRAP**
 para generar forms de una columna podemos crear un div con la clase form-row 

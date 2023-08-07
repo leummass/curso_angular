@@ -22,7 +22,11 @@ export class FormularioComponent {
   constructor(
     private loggingService: LoggingService,
     private usuariosService: UsuariosService
-  ) {}
+  ) {
+    this.usuariosService.saludar.subscribe((indice: number) =>
+      alert('El indice es: ' + indice)
+    );
+  }
 
   agregarUsuario() {
     let usuarion = new Usuario(

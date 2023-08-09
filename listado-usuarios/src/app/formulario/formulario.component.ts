@@ -15,9 +15,11 @@ import { UsuariosService } from '../usuarios.service';
   styleUrls: ['./formulario.component.css'],
 })
 export class FormularioComponent {
+  nombreInput:string;
+  apellidoInput:string;
   //@Output() usuarioCreado = new EventEmitter<Usuario>();
-  @ViewChild('nombreInput') nombreInput: ElementRef;
-  @ViewChild('apellidoInput') apellidoInput: ElementRef;
+  //@ViewChild('nombreInput') nombreInput: ElementRef;
+  //@ViewChild('apellidoInput') apellidoInput: ElementRef;
 
   constructor(
     private loggingService: LoggingService,
@@ -30,8 +32,8 @@ export class FormularioComponent {
 
   agregarUsuario() {
     let usuarion = new Usuario(
-      this.nombreInput.nativeElement.value,
-      this.apellidoInput.nativeElement.value
+      this.nombreInput,
+      this.apellidoInput
     );
     this.usuariosService.usuarioAgregado(usuarion);
     //this.loggingService.enviarMensajeAConsola("Usuario nombre: "+ usuarion.nombre+" apellido: "+usuarion.apellido);

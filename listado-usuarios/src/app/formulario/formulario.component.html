@@ -1,34 +1,25 @@
-<form class="row">
-    <div class="col-md-2">
-      <label for="nombre" class="visually-hidden">Nombre</label>
-      <input
-        type="text"
-        name="nombre"
-        id="nombre"
-        placeholder="Nombre"
-        class="form-control"
-        #nombreInput
-      />
-    </div>
-    <div class="col-md-2">
-      <label for="apellido" class="visually-hidden">Apellido</label>
-      <input
-        type="text"
-        name="apellido"
-        id="apellido"
-        placeholder="Apellido"
-        class="form-control"
-        #apellidoInput
-      />
-    </div>
-    <div class="col-md-2">
-      <button type="submit" class="btn btn-primary" (click)="agregarUsuario()">
-        Agregar
-      </button>
-    </div>
-    <div class="col">
-      <button type="submit" class="btn btn-primary" (click)="eliminarUsuario()">
-        Eliminar
-      </button>
-    </div>
-  </form>
+<form class="item">
+  <input
+    type="text"
+    name="nombre"
+    id="nombre"
+    placeholder="Nombre"
+    [(ngModel)]="nombreInput"
+  />
+
+  <input
+    type="text"
+    name="apellido"
+    id="apellido"
+    placeholder="Apellido"
+    [(ngModel)]="apellidoInput"
+  />
+
+  <button type="submit" class="btn btn-primary" (click)="agregarUsuario()">
+    +
+  </button>
+
+  <button type="submit" class="btn btn-primary" (click)="eliminarUsuario()">
+    Eliminar
+  </button>
+</form>

@@ -15,4 +15,8 @@ export class IngresoComponent {
     this.ingresos=this.ingresoService.ingreso;
   }
 
+  eliminarRegistro(ingreso:Ingreso){
+    this.ingresoService.eliminar(ingreso);
+  }
+
 }

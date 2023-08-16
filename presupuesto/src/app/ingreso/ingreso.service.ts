@@ -10,4 +10,7 @@ export class IngresoService{
         const idx: number = this.ingreso.indexOf(ingreso);
         this.ingreso.splice(idx,1);
     }
+    agregar(ingreso:Ingreso){
+        this.ingreso.push(ingreso);
+    }
 }

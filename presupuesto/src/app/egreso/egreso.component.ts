@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Egreso } from './egreso.model';
+import { EgresoService } from './egreso.service';
 
 @Component({
   selector: 'app-egreso',
@@ -6,5 +8,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./egreso.component.css']
 })
 export class EgresoComponent {
+  @Input() ingresoTotal:number;
 
+  egresos:Egreso[]=[]
+  constructor(private egresoService:EgresoService){}
+
+  ngOnInit(){
+    this.egresos = this.egresoService.egresos;
+  }
+  eliminarEgreso(egreso:Egreso){
+    this.egresoService.eliminar(egreso);
+  }
+
+  calcularPorcentaje(egreso:Egreso){
+    return egreso.valor/this.ingresoTotal;
+  }
 }

@@ -85,6 +85,18 @@ Para poder inyectar un servicio en otro servicio es necesario poner el decorador
 **Comunicar componentes por medio de un servicio**
 Para lograr esto es necesario utilizar un EventEmitter en el servicio que nos ayudará a compartir la información, se crea un EventEmitter del tipo que sea, luego, en el componente que emitirá la información es necesario utilizar un método o algo que dispare esto, por ejemplo, en un botón se usa el método emitirSaludo que le dirá al EventEmitter de nuestro servicio qué emitir, en nuestro caso, un valor númerico que es el índice de registro, luego, en el otro componente dentro de su constructor suscribimos al componente al EventEmitter, ejemplo: this.usuariosSerive.saludar.subscribe() y dentro de paréntesis va la acción que queremos que se realice al momento de que se emita el evento, en nuestro caso es una función de flecha que alerta el número del índice.
 
+**Pipes**
+Un pipe nos permite dar formatos a los datos que se muestran
+
+**[ngClass]**
+nos ayuda a cambiar la clase css en caso de que una condicion sea verdadera
+
+**(ngSubmit)** 
+nos permite realizar una acción desde un formulario que al momento de añadir información a un formulario se ejecute una función
+
+**ngForm**
+nos permite validar el formularo por ejemplo, si se declara la referencia local #f="ngForm" se puede valir dentro de (ngSubmit) ="f.form.valid" para validar que esté completo
+
 **BOOTSTRAP**
 para generar forms de una columna podemos crear un div con la clase form-row 
 para generar un form group de solo dos columnas añadimos las clases form-group y col-md-2 a un contenedor

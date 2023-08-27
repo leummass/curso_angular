@@ -97,6 +97,14 @@ nos permite realizar una acción desde un formulario que al momento de añadir i
 **ngForm**
 nos permite validar el formularo por ejemplo, si se declara la referencia local #f="ngForm" se puede valir dentro de (ngSubmit) ="f.form.valid" para validar que esté completo
 
+**Routing**
+para generar el módulo de routing de forma manual se uitiliza ng g module <nombre-del-modulo> y se generará.
+Es necesario agregar el approutingmodule a los imports del app.module.ts de la aplicación.
+
+Las rutas se definen en el archivo de routing, primero hay que importar el RouterModule.forRoot(<constante de las rutas>) y exportar el RotuerModule dentro de NgModule, luego se define la constante de rutas que tiene paths y el componente que se mostrará.
+
+
+
 **BOOTSTRAP**
 para generar forms de una columna podemos crear un div con la clase form-row 
 para generar un form group de solo dos columnas añadimos las clases form-group y col-md-2 a un contenedor

@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { Usuario } from '../usuario.model';
-import { UsuariosService } from '../usuarios.service';
+import { Usuario } from '../../usuario.model';
+import { UsuariosService } from '../../usuarios.service';
 
 @Component({
   selector: 'app-persona',

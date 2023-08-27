@@ -8,14 +8,8 @@ import { UsuariosService } from './usuarios.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent implements OnInit {
-  titulo = 'Listado de usuarios';
-  usuarios: Usuario[] = [];
-  constructor(private loggingService: LoggingService, private usuariosService:UsuariosService){}
+export class AppComponent  {
   
-  ngOnInit(): void {
-    this.usuarios= this.usuariosService.usuarios;
-  }
 
   /*usuarioAgregado(usuario: Usuario){
     //this.loggingService.enviarMensajeAConsola("Usuario agregado: "+usuario.nombre);

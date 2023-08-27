@@ -5,9 +5,10 @@ import {
   Output,
   ViewChild,
 } from '@angular/core';
-import { Usuario } from '../usuario.model';
-import { LoggingService } from '../LoggingService.service';
-import { UsuariosService } from '../usuarios.service';
+import { Usuario } from '../../usuario.model';
+import { LoggingService } from '../../LoggingService.service';
+import { UsuariosService } from '../../usuarios.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-formulario',
@@ -23,19 +24,21 @@ export class FormularioComponent {
 
   constructor(
     private loggingService: LoggingService,
-    private usuariosService: UsuariosService
+    private usuariosService: UsuariosService,
+    private router:Router
   ) {
     this.usuariosService.saludar.subscribe((indice: number) =>
       alert('El indice es: ' + indice)
     );
   }
 
-  agregarUsuario() {
+  onGuardarUsuario() {
     let usuarion = new Usuario(
       this.nombreInput,
       this.apellidoInput
     );
     this.usuariosService.usuarioAgregado(usuarion);
+    this.router.navigate(["personas"])
     //this.loggingService.enviarMensajeAConsola("Usuario nombre: "+ usuarion.nombre+" apellido: "+usuarion.apellido);
     //this.usuarioCreado.emit(usuarion);
   }

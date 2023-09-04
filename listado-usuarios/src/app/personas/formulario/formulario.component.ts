@@ -8,7 +8,7 @@ import {
 import { Usuario } from '../../usuario.model';
 import { LoggingService } from '../../LoggingService.service';
 import { UsuariosService } from '../../usuarios.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-formulario',
@@ -18,6 +18,7 @@ import { Router } from '@angular/router';
 export class FormularioComponent {
   nombreInput:string;
   apellidoInput:string;
+  index:number;
   //@Output() usuarioCreado = new EventEmitter<Usuario>();
   //@ViewChild('nombreInput') nombreInput: ElementRef;
   //@ViewChild('apellidoInput') apellidoInput: ElementRef;
@@ -25,11 +26,20 @@ export class FormularioComponent {
   constructor(
     private loggingService: LoggingService,
     private usuariosService: UsuariosService,
-    private router:Router
+    private router:Router,
+    private route: ActivatedRoute
   ) {
     this.usuariosService.saludar.subscribe((indice: number) =>
       alert('El indice es: ' + indice)
     );
+  }
+  ngOnInit(){
+    this.index=this.route.snapshot.params['id'];
+    if(this.index){
+      let usuario: Usuario= this.usuariosService.encontrarPersona(this.index);
+      this.nombreInput=usuario.nombre;
+      this.apellidoInput=usuario.apellido;
+    }
   }
 
   onGuardarUsuario() {
@@ -37,13 +47,23 @@ export class FormularioComponent {
       this.nombreInput,
       this.apellidoInput
     );
-    this.usuariosService.usuarioAgregado(usuarion);
+    if(this.index){
+      this.usuariosService.modificarUsuario(this.index, usuarion);
+    }else{
+      this.usuariosService.usuarioAgregado(usuarion);
+    }
+
+    
+    
     this.router.navigate(["personas"])
     //this.loggingService.enviarMensajeAConsola("Usuario nombre: "+ usuarion.nombre+" apellido: "+usuarion.apellido);
     //this.usuarioCreado.emit(usuarion);
   }
   eliminarUsuario() {
     //this.usuarios.pop();
-    this.usuariosService.usuarioEliminado();
+    if(this.index !=null){
+      this.usuariosService.usuarioEliminado(this.index);
+    }
+    this.router.navigate(['personas'])
   }
 }

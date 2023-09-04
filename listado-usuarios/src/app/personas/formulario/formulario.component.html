@@ -22,8 +22,8 @@
       +
     </button>
 
-    <button type="submit" class="btn btn-primary" style="cursor:pointer;">
-      Eliminar
+    <button *ngIf="index !=null" type="submit" style="cursor: pointer" class="buttonRed" (click)="eliminarUsuario()">
+      -
     </button>
   </form>
 </div>

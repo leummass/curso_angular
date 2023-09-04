@@ -103,6 +103,9 @@ Es necesario agregar el approutingmodule a los imports del app.module.ts de la a
 
 Las rutas se definen en el archivo de routing, primero hay que importar el RouterModule.forRoot(<constante de las rutas>) y exportar el RotuerModule dentro de NgModule, luego se define la constante de rutas que tiene paths y el componente que se mostrará.
 
+**RouterLink**
+Es un elemento de angular que es parecido al href, este nos permite mapear una ruta que ya esta definida dentro del archivo de routing de nuestro proyecto, se puede utilizar también con propertybinding si se quiere pasar un parámetro además de la ruta el elemento adicional que se quiere enviar tiene que estar especificado tambien en la ruta del componente routing del proyecto por ejemplo, tenemos la ruta /personas:id entonces al usar routerlink tambien se tiene que pasar el id
+para recibir este elemento es necesario que en el componente que se recibirá se utilice route:ActivatedRoute en el constructor y en el método ngOnInit() aqui usaremos una variable para guardarlo, usamos this.<nombrevariable>=this.route.snapshot.params['<nombrequesepasoenlaruta>'].
 
 
 **BOOTSTRAP**

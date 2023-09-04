@@ -21,8 +21,8 @@ export class UsuariosService {
     this.usuarios.push(usuario);
   }
 
-  usuarioEliminado() {
-    this.usuarios.pop();
+  usuarioEliminado(index:number) {
+    this.usuarios.splice(index,1);
   }
 
   noUsuarios(): true | false {
@@ -30,5 +30,14 @@ export class UsuariosService {
       return true;
     }
     return false;
+  }
+  encontrarPersona(index:number){
+    let usuario: Usuario = this.usuarios[index];
+    return usuario;
+  }
+  modificarUsuario(index:number,usuario: Usuario ){
+    let usuario1 = this.usuarios[index];
+    usuario1.nombre=usuario.nombre;
+    usuario1.apellido=usuario.apellido;
   }
 }

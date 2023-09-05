@@ -1,20 +1,16 @@
-<div style="text-align: center;">
-  <button style="cursor: pointer;" (click)="agregar()">+</button>
+<div style="text-align: center">
+  <button style="cursor: pointer" (click)="agregar()">+</button>
 </div>
 <div class="box" id="heading">
-    <h1>{{ titulo }}</h1>
-  </div>
-  <div class="box">
-    <app-persona
-      *ngFor="let usuario of usuarios; let i = index"
-      [usuario]="usuario"
-      [indice]="i"
-    >
-      <div *ngIf="false">No hay usuarios para mostrar</div>
-    </app-persona>
-  </div>
-  <div class="box">
-    <app-formulario></app-formulario>
-    <!--(usuarioCreado)="usuarioAgregado($event)" iba dentro del app-formulario-->
-    <hr />
-  </div>
+  <h1>{{ titulo }}</h1>
+</div>
+<div class="box">
+  <app-persona
+    *ngFor="let usuario of usuarios; let i = index"
+    [usuario]="usuario"
+    [indice]="i"
+  >
+    <div *ngIf="false">No hay usuarios para mostrar</div>
+  </app-persona>
+</div>
+<router-outlet></router-outlet>

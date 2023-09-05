@@ -19,6 +19,7 @@ export class FormularioComponent {
   nombreInput:string;
   apellidoInput:string;
   index:number;
+  modoEdicion:number;
   //@Output() usuarioCreado = new EventEmitter<Usuario>();
   //@ViewChild('nombreInput') nombreInput: ElementRef;
   //@ViewChild('apellidoInput') apellidoInput: ElementRef;
@@ -35,7 +36,8 @@ export class FormularioComponent {
   }
   ngOnInit(){
     this.index=this.route.snapshot.params['id'];
-    if(this.index){
+    this.modoEdicion = +this.route.snapshot.queryParams['modoEdicion'];
+    if(this.modoEdicion != null && this.modoEdicion === 1){
       let usuario: Usuario= this.usuariosService.encontrarPersona(this.index);
       this.nombreInput=usuario.nombre;
       this.apellidoInput=usuario.apellido;
@@ -47,7 +49,7 @@ export class FormularioComponent {
       this.nombreInput,
       this.apellidoInput
     );
-    if(this.index){
+    if(this.modoEdicion != null && this.modoEdicion === 1){
       this.usuariosService.modificarUsuario(this.index, usuarion);
     }else{
       this.usuariosService.usuarioAgregado(usuarion);

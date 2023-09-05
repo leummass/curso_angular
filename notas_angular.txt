@@ -107,6 +107,14 @@ Las rutas se definen en el archivo de routing, primero hay que importar el Route
 Es un elemento de angular que es parecido al href, este nos permite mapear una ruta que ya esta definida dentro del archivo de routing de nuestro proyecto, se puede utilizar también con propertybinding si se quiere pasar un parámetro además de la ruta el elemento adicional que se quiere enviar tiene que estar especificado tambien en la ruta del componente routing del proyecto por ejemplo, tenemos la ruta /personas:id entonces al usar routerlink tambien se tiene que pasar el id
 para recibir este elemento es necesario que en el componente que se recibirá se utilice route:ActivatedRoute en el constructor y en el método ngOnInit() aqui usaremos una variable para guardarlo, usamos this.<nombrevariable>=this.route.snapshot.params['<nombrequesepasoenlaruta>'].
 
+**[queryParams]**
+este nos permite mandar cualquier cantidad de parámetros, en html se usa como [queryParams]="{<nombrevariable>}" junto con su parámetro y donde se recibe se asigna el valor a la variable por medio de this.route.snapshot.queryParams['<nombreparámetro>'];
+
+**Child Route**
+Las childroute sirven para hacer las rutas más sencillas, en el código de routing lo que se hará es agregar children y un arreglo de rutas que se desprende de esta misma, por ejemplo si se tiene personas/agregar, al hacer una child route será personas y dentro de los children irá agregar, esto nos permite eliminar las llamadas directas a los componentes desde el padre en el código html y simplemente utilizar router-outlet
+
+**Componente error**
+En el app-routing si declaramos la ruta '**' será por default a donde nos mandará el navegador cuando no se encuentre un componente o esté mal específicada la ruta
 
 **BOOTSTRAP**
 para generar forms de una columna podemos crear un div con la clase form-row 

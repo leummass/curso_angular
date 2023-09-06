@@ -1,6 +1,7 @@
 import { EventEmitter, Injectable } from '@angular/core';
 import { LoggingService } from './LoggingService.service';
 import { Usuario } from './usuario.model';
+import { DataServices } from './data.services';
 
 @Injectable()
 export class UsuariosService {
@@ -12,13 +13,15 @@ export class UsuariosService {
 
   saludar = new EventEmitter<number>();
 
-  constructor(private loggingService: LoggingService) {}
+  constructor(private loggingService: LoggingService,
+    private dataService: DataServices) {}
 
   usuarioAgregado(usuario: Usuario) {
     this.loggingService.enviarMensajeAConsola(
       'Usuario agregado: ' + usuario.nombre
     );
     this.usuarios.push(usuario);
+    this.dataService.guardarUsuarios(this.usuarios);
   }
 
   usuarioEliminado(index:number) {

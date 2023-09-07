@@ -8,7 +8,7 @@ export class DataServices {
 
   guardarUsuarios(usuarios: Usuario[]) {
     this.httpClient
-      .post(
+      .put(
         'https://listado-usuarios-4afbe-default-rtdb.firebaseio.com/datos.json',
         usuarios
       )
@@ -16,5 +16,28 @@ export class DataServices {
         next: (response) => console.log(response),
         error: (error) => console.log(error),
       });
+  }
+  cargarPersonas() {
+    return this.httpClient.get<Usuario[]>(
+      'https://listado-usuarios-4afbe-default-rtdb.firebaseio.com/datos.json'
+    );
+  }
+  modificarUsuario(index:number,usuario:Usuario){
+    let url:string;
+    url = 'https://listado-usuarios-4afbe-default-rtdb.firebaseio.com/datos/' + index + '.json';
+    this.httpClient.put(url,usuario)
+    .subscribe({
+      next: (response) => console.log("Usuario modificado"+response),
+      error: (error) => console.log(error),
+    });
+  }
+  eliminarUsuario(index:number){
+    let url:string;
+    url = 'https://listado-usuarios-4afbe-default-rtdb.firebaseio.com/datos/' + index + '.json';
+    this.httpClient.delete(url)
+    .subscribe({
+      next: (response) => console.log("Usuario eliminado"+response),
+      error: (error) => console.log(error),
+    });
   }
 }

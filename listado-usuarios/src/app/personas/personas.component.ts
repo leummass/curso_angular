@@ -16,6 +16,15 @@ export class PersonasComponent {
   
   ngOnInit(): void {
     this.usuarios= this.usuariosService.usuarios;
+    this.usuariosService.obtenerUsuarios()
+    .subscribe({
+      next: (item) =>{
+        this.usuarios = item as Usuario[];
+        this.usuariosService.setUsuarios(this.usuarios);
+      },
+      error: () => {console.log("Error al recibir usuarios")},
+      complete: () => {console.log("Usuarios recibidos")}
+    });
   }
   agregar(){
     this.router.navigate(["personas/agregar"])

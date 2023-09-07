@@ -122,6 +122,14 @@ Es una clase del paquete @angular/common que nos permite realizar las peticiones
 **post request**
 En el ejemplo utilizamos un método llamado guardarUsuarios en este se realiza un httpClient.post al cual se le manda el url de la base de datos luego separado por coma los datos, luego se hace un .subscribe a lo mismo pero se pasa un arreglo de las posibles respuestas, en nuestro caso si se hace la inserción es con un next: (response) => console.log(response) y separado por una coma se realiza lo mismo con el error
 
+**métodos de HttpClient**
+post: nos permite subir la información
+put: nos permite modificar la información
+get: nos permite recibir información
+delete: nos permite eliminar información
+
+es necesario que dentro de cada subscribe vaya un arreglo con next y error, definiendo la respuesta y el error con su respectiva función de flecha en put/post se puede hacer desde el dataservice y en get es recomendable hacerlo desde el front en su ngOnInit()
+
 **BOOTSTRAP**
 para generar forms de una columna podemos crear un div con la clase form-row 
 para generar un form group de solo dos columnas añadimos las clases form-group y col-md-2 a un contenedor

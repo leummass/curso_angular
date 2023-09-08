@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 export class UsuariosService {
-  usuarios: Usuario[] = [new Usuario('juanaco','puto'), new Usuario('juanaco','puto'), new Usuario('juanaco','puto')];
+  usuarios: Usuario[] = [];
 
   saludar = new EventEmitter<number>();
 
@@ -14,7 +14,6 @@ export class UsuariosService {
     private dataService: DataServices) {}
 
   usuarioAgregado(usuario: Usuario) {
-    console.log(this.usuarios);
     this.loggingService.enviarMensajeAConsola(
       'Usuario agregado: ' + usuario.nombre
     );

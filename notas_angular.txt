@@ -130,6 +130,11 @@ delete: nos permite eliminar información
 
 es necesario que dentro de cada subscribe vaya un arreglo con next y error, definiendo la respuesta y el error con su respectiva función de flecha en put/post se puede hacer desde el dataservice y en get es recomendable hacerlo desde el front en su ngOnInit()
 
+**Login**
+para hacer el login se va a utilizar un form de #f ngForm y con un ngSubmit que verifique que el form es valido y se ejecuta el método login(f) al cual se le manda el form como tal, este tiene input para contraseña y correo y un botón para hacerle submit al form
+ahora lo que hacemos en el login.service.ts es autenticar el correo y la contraseña para que nos retorne un token y ese token guardarlo para realizar las peticiones de post/put get y delete
+en el app.component inicializamos la aplicación de firebase con su respectiva apikey y authdomain 
+
 **BOOTSTRAP**
 para generar forms de una columna podemos crear un div con la clase form-row 
 para generar un form group de solo dos columnas añadimos las clases form-group y col-md-2 a un contenedor

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Usuario } from './usuario.model';
-import { LoggingService } from './LoggingService.service';
-import { UsuariosService } from './usuarios.service';
+import * as firebase from 'firebase/app';
+
 
 @Component({
   selector: 'app-root',
@@ -10,11 +9,11 @@ import { UsuariosService } from './usuarios.service';
 })
 export class AppComponent  {
   
-
-  /*usuarioAgregado(usuario: Usuario){
-    //this.loggingService.enviarMensajeAConsola("Usuario agregado: "+usuario.nombre);
-    //this.usuarios.push(usuario);
-    this.usuariosService.usuarioAgregado(usuario);
-  }*/
+  ngOnInit(){
+    firebase.initializeApp({
+      apiKey: "AIzaSyCkXxaVzaKwrLUVUuw5rYqAeglySiteBsE",
+      authDomain: "listado-usuarios-4afbe.firebaseapp.com",
+    })
+  }
 
 }

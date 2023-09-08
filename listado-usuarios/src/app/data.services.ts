@@ -1,10 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Usuario } from './usuario.model';
+import { LoginService } from './login/login.service';
 
 @Injectable()
 export class DataServices {
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient, private loginService:LoginService) {}
 
   guardarUsuarios(usuarios: Usuario[]) {
     this.httpClient
@@ -18,8 +19,9 @@ export class DataServices {
       });
   }
   cargarPersonas() {
+    const token = this.loginService.getIdToken();
     return this.httpClient.get<Usuario[]>(
-      'https://listado-usuarios-4afbe-default-rtdb.firebaseio.com/datos.json'
+      'https://listado-usuarios-4afbe-default-rtdb.firebaseio.com/datos.json?auth='+token
     );
   }
   modificarUsuario(index:number,usuario:Usuario){

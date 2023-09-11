@@ -65,6 +65,9 @@ html {
     padding-bottom: 6px;
     border-width: 0;
   }
+  .centrado{
+    text-align: center;
+  }
   .buttonRed{
     min-height: 50px;
     width: 50px;

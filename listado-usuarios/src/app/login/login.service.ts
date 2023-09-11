@@ -7,7 +7,7 @@ export class LoginService{
     constructor(private router: Router){
         
     }
-    token: string;
+    token: string="";
     login(email:string,password:string){
         const auth = firebase.getAuth();
         firebase.signInWithEmailAndPassword(auth,email,password)
@@ -25,5 +25,14 @@ export class LoginService{
 
     getIdToken(){
         return this.token;
+    }
+    isAuth(){
+        return this.token != "";
+    }
+    logout(){
+        firebase.getAuth().signOut().then( () => {
+            this.token = "";
+            this.router.navigate(["login"]);
+        }).catch(error => console.log("error al hacer logout "+error))
     }
 }

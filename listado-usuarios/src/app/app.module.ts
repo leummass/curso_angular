@@ -14,6 +14,7 @@ import { DataServices } from './data.services';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { LoginService } from './login/login.service';
+import { LoginGuard } from './login/login-guard.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { LoginService } from './login/login.service';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [LoggingService, UsuariosService, DataServices,LoginService],
+  providers: [LoggingService, UsuariosService, DataServices,LoginService, LoginGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

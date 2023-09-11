@@ -135,6 +135,12 @@ para hacer el login se va a utilizar un form de #f ngForm y con un ngSubmit que 
 ahora lo que hacemos en el login.service.ts es autenticar el correo y la contraseña para que nos retorne un token y ese token guardarlo para realizar las peticiones de post/put get y delete
 en el app.component inicializamos la aplicación de firebase con su respectiva apikey y authdomain 
 
+**Guardianes/Guards**
+Evitan mostrar cierto contenido hasta cumplir una condición
+Para implementar este concepto en nuestro caso hacemos una clase guard, dentro de esta va el método CanActivateLogin que nos retornará un true si el usuario está logeado y si no será un false
+
+En nuestro archivo de routing, tenemos que declarar la constante CanActivateLogin injectando nuestro LoginGuard, después en cada path usaremos el canActivate: [CanACtivateLogin] para proteger de que no entren sin autenticación
+
 **BOOTSTRAP**
 para generar forms de una columna podemos crear un div con la clase form-row 
 para generar un form group de solo dos columnas añadimos las clases form-group y col-md-2 a un contenedor

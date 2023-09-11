@@ -1,2 +1,7 @@
-
+<div *ngIf="!isAuth()" class="box centrado">
+    <a [routerLink]="['/login']">Login</a>
+</div>
+<div *ngIf="isAuth()" class="box centrado">
+    <a style="cursor: pointer" (click)="salir()" href="">Salir</a>
+</div>
 <router-outlet></router-outlet>

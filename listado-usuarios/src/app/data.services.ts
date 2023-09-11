@@ -8,9 +8,10 @@ export class DataServices {
   constructor(private httpClient: HttpClient, private loginService:LoginService) {}
 
   guardarUsuarios(usuarios: Usuario[]) {
+    const token = this.loginService.getIdToken();
     this.httpClient
       .put(
-        'https://listado-usuarios-4afbe-default-rtdb.firebaseio.com/datos.json',
+        'https://listado-usuarios-4afbe-default-rtdb.firebaseio.com/datos.json?auth='+token,
         usuarios
       )
       .subscribe({
@@ -25,8 +26,9 @@ export class DataServices {
     );
   }
   modificarUsuario(index:number,usuario:Usuario){
+    const token = this.loginService.getIdToken();
     let url:string;
-    url = 'https://listado-usuarios-4afbe-default-rtdb.firebaseio.com/datos/' + index + '.json';
+    url = 'https://listado-usuarios-4afbe-default-rtdb.firebaseio.com/datos/' + index + '.json?auth='+token;
     this.httpClient.put(url,usuario)
     .subscribe({
       next: (response) => console.log("Usuario modificado"+response),
@@ -34,8 +36,9 @@ export class DataServices {
     });
   }
   eliminarUsuario(index:number){
+    const token = this.loginService.getIdToken();
     let url:string;
-    url = 'https://listado-usuarios-4afbe-default-rtdb.firebaseio.com/datos/' + index + '.json';
+    url = 'https://listado-usuarios-4afbe-default-rtdb.firebaseio.com/datos/' + index + '.json?auth='+token;
     this.httpClient.delete(url)
     .subscribe({
       next: (response) => console.log("Usuario eliminado"+response),

@@ -141,6 +141,9 @@ Para implementar este concepto en nuestro caso hacemos una clase guard, dentro d
 
 En nuestro archivo de routing, tenemos que declarar la constante CanActivateLogin injectando nuestro LoginGuard, después en cada path usaremos el canActivate: [CanACtivateLogin] para proteger de que no entren sin autenticación
 
+**Producción**
+para preparar para mandar a producción nuestro proyecto, basta con irse a la raiz del proyecto y escribir ng build --configuration production --aot en nuestra terminal
+
 **BOOTSTRAP**
 para generar forms de una columna podemos crear un div con la clase form-row 
 para generar un form group de solo dos columnas añadimos las clases form-group y col-md-2 a un contenedor
